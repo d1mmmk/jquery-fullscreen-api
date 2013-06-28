@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+    </head>
+    <body>
+        <div class="fullscreen">
+            <div class="fullscreen-support">is fullscreen support: <span></span></div>
+            <span class="fullscreen-toggle">toggle fullscreen</span>
+            <input type="text" class="fullscreen-status">
+        </div>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script src="jquery.fullscreen.api.min.js"></script>
+        <script type="text/javascript">
+            jQuery(document).ready(function($){
+                $('.fullscreen-support span').text($._checkfullscreen());
+                $('.fullscreen-status').val($._isfullscreen());
+                $('.fullscreen-toggle').on('click',function(e){
+                    e.preventDefault();
+                    $('.fullscreen').fullscreentoggle();
+                })
+                $(window).on('fullscreenchange',function(e,fullscreen){
+                    $('.fullscreen-status').val(fullscreen);                    
+                })
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,5 @@
+node_modules/*
+package.json
+Gruntfile.js
+source/*
+*.map
